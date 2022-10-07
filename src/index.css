@@ -41,7 +41,7 @@ body {
   cursor: pointer;
   display: inline-block;
   font-family: din-round,sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: .8px;
   line-height: 20px;
@@ -58,7 +58,7 @@ body {
   -webkit-user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  width: 180px;
+  width: 200px;
 }
 
 .button-1:after {
