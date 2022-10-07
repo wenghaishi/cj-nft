@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  margin: 0;
+  padding:0;
+}
+
+.cj-logo {
+  height: 65px;
+  align-self: start;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 35px;
+  padding-right: 35px;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-self: center;
+  font-size: small;
+  font-family: din-round,sans-serif;
+}
+
+.button-1 {
+  appearance: button;
+  background-color: #ffe08a;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0); 
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 180px;
+}
+
+.button-1:after {
+  background-clip: padding-box;
+  background-color: #FFC82C;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-1:main,
+.button-1:focus {
+  user-select: auto;
+}
+
+.button-1:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-1:disabled {
+  cursor: auto;
+}
+
+.main-logo {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.main-1 {
+  display: flex;
+  flex-direction: column;
+  background-image: url("bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 127%;
+
+  justify-self: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-bottom: 20px;
+}
+
+.main-2 {
+  display: flex;
+  flex-direction: row;
+  padding-left: 40px;
+  padding-right: 40px;
+  gap: 6px;
+  justify-content: space-evenly;  
+}
+
+.main-des {
+  font-size: 30px;
+}
+
+.main-name {
+  font-size: 42px;
+}
+
+.main-name-des {
+  font-size: 25px;
+
+}
+
+.main-steps {
+  align-self: center;
+}
+
+.footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgb(235, 195, 64);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
