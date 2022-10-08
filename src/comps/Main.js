@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { ethers, BigNumber } from 'ethers';
 import burgerPunksNFT from './BurgerPunksNFT.json'
 
-const burgerPunksNFTAddress = "0xe03AC4514dbD5348fe3f2b9C6c1BF5B447FB2797";
+const burgerPunksNFTAddress = "0x5c96B84199d7f91FD204c76917e249fCF2150f1a";
 
 const Main = ({ accounts, setAccounts }) => {
   const [mintAmount, setMintAmount] =useState(1);
@@ -12,25 +12,23 @@ const Main = ({ accounts, setAccounts }) => {
 
   async function handleMint() {
     if (window.ethereum) {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner();
-        const contract = new ethers.Contract(
-            burgerPunksNFTAddress,
-            burgerPunksNFT.abi,
-            signer
-        );
-        try {
-            const response = await contract.mint(BigNumber.from(mintAmount), {
-                value: ethers.utils.parseEther((0.02 * mintAmount).toString()),
-            });
-            console.log('response: ', response);
-        }   catch (err) {
-            console.log("error: ", err)
-        }
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const contract = new ethers.Contract(
+          burgerPunksNFTAddress,
+          burgerPunksNFT.abi,
+          signer
+      );
+      try {
+          const response = await contract.mint(BigNumber.from(mintAmount), {
+              value: ethers.utils.parseEther((0.0001 * mintAmount).toString()),
+          });
+          console.log('response: ', response);
+      }   catch (err) {
+          console.log("error: ", err)
+      }
     }
   }
-
-  
 
   return (
     <div className='main-1' >
@@ -45,6 +43,9 @@ const Main = ({ accounts, setAccounts }) => {
             {isConnected ? (
               <div className='main-code-box' >
                 <h1 className='main-enter-code' >Enter unique code at the bottom of your reciept.</h1>
+                <input className='main-input' />
+                <button className='button-3' onClick={handleMint} >Mint / upgrade NFT</button>
+                <h1 className='main-warning' >*Only one NFT is mintable per wallet</h1>
               </div>
              ) : (
               <div className='main-steps' >

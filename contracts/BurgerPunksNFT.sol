@@ -17,7 +17,7 @@ contract BurgerPunksNFT is ERC721, Ownable {
     mapping(address => uint256) public walletMints;
 
     constructor() payable ERC721('BurgerPunks', 'RP') {
-        mintPrice = 0 ether;
+        mintPrice = 0.0001 ether;
         totalSupply = 0;
         maxSupply = 8801;
         maxPerWallet = 1;
@@ -54,7 +54,5 @@ contract BurgerPunksNFT is ERC721, Ownable {
             _safeMint(msg.sender, newTokenId);
         }
     }
-
-
 }
 
