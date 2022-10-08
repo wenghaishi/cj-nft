@@ -24,9 +24,9 @@ function App() {
     case "/utility":
       Component = Utility
       break
+    default:
+      Component = Main
   }
-
-
 
   return (
     <div className="App">

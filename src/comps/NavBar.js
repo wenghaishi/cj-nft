@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import About from './About';
-import roadmap from './Roadmap'
+
 
 const NavBar = ({ accounts, setAccounts}) => {
   const isConnected = Boolean(accounts[0]);
