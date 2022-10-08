@@ -1,62 +1,18 @@
 import React, {useEffect, useState} from 'react'
 
-function NavBar() {
+const NavBar = ({ accounts, setAccounts}) => {
+  const isConnected = Boolean(accounts[0]);
 
-  const [walletAddress, setWalletAddress] = useState("");
-
-  useEffect(() => {
-    getCurrentWalletConnected();
-    addWalletListener();
-  }, [walletAddress]);
-
-  const connectWallet = async() => {
-    if(typeof window != "undefined" && typeof window.ethereum != "undefined")
-      try{
-        /* metamask is installed */
-        const accounts = await window.ethereum.request({method: "eth_requestAccounts"});
-        setWalletAddress(accounts[0]);
-        console.log(accounts[0]);
-      } catch(err) {
-        console.err(err.message);
-      } else {
-        /* metamask is not installed */
-        console.log("Please install metamask");
+  async function connectAccount() {
+      if (window.ethereum) {
+          const accounts = await window.ethereum.request({
+              method: "eth_requestAccounts",
+          });
+          setAccounts(accounts);
       }
   }
 
-  const getCurrentWalletConnected = async () => {
-    if (typeof window != "undefined" && typeof window.ethereum != "undefined") {
-      try {
-        const accounts = await window.ethereum.request({
-          method: "eth_accounts",
-        });
-        if (accounts.length > 0) {
-          setWalletAddress(accounts[0]);
-          console.log(accounts[0]);
-        } else {
-          console.log("Connect to MetaMask using the Connect button");
-        }
-      } catch (err) {
-        console.error(err.message);
-      }
-    } else {
-      /* MetaMask is not installed */
-      console.log("Please install MetaMask");
-    }
-  };
-
-  const addWalletListener = async () => {
-    if (typeof window != "undefined" && typeof window.ethereum != "undefined") {
-      window.ethereum.on("accountsChanged", (accounts) => {
-        setWalletAddress(accounts[0]);
-        console.log(accounts[0]);
-      });
-    } else {
-      /* MetaMask is not installed */
-      setWalletAddress("");
-      console.log("Please install MetaMask");
-    }
-  };
+  const walletAddress = accounts[0]
 
   return (
     <div className='navbar' >
@@ -67,14 +23,16 @@ function NavBar() {
             <h1>Roadmap</h1>
             <h1>Utility</h1>
         </div>
-        <button onClick={connectWallet} className='button-1' >
-          {walletAddress && walletAddress.length > 0
-          ? `Connected: ${walletAddress.substring(
-          0,
-          4
-          )}...${walletAddress.substring(38)}`
-          : "Connect MetaMask"}
-        </button>
+        {isConnected ? (
+          <button className='button-1'>Connected: {walletAddress.substring(
+            0,
+            4
+          )}...{walletAddress.substring(38)}</button>
+        ) : (
+          <button onClick={connectAccount} className='button-1' >
+            Connect MetaMask
+          </button>
+        )}
     </div>
   )
 }
