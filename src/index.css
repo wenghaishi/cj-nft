@@ -110,8 +110,8 @@ body {
   justify-self: center;
   justify-content: center;
   padding-top: 20px;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 145px;
+  padding-right: 145px;
   padding-bottom: 20px;
 }
 
@@ -120,7 +120,7 @@ body {
   flex-direction: row;
   padding-left: 40px;
   padding-right: 40px;
-  padding-bottom: 100px;
+  padding-bottom: 70px;
   padding-top: 30px;
   gap: 20px;
   justify-content: space-evenly;  
@@ -132,6 +132,7 @@ body {
 
 .main-name {
   font-size: 42px;
+  padding-top: 30px;
 }
 
 .main-name-des {
@@ -215,3 +216,55 @@ body {
   color: #000;
   background: rgb(255, 218, 87);
 }
+
+.about-1 {
+  display: flex;
+  flex-direction: column;
+  background-image: url("bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 127%;
+
+  justify-self: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-left: 145px;
+  padding-right: 145px;
+  padding-bottom: 60px;
+}
+
+.about-title {
+  padding-top: 16px;
+  font-size: 30px;
+  font-weight: 550;
+  color: #000;
+  justify-self: center;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: din-round,sans-serif;
+}
+
+.about-title:hover {
+  background-color: #FFC82C;
+}
+  
+.about-div {
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+  padding-top: 90px;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: center;
+
+}
+
+.about-img {
+  max-width: 430px;
+}
+
+
+.about-text1 {
+  font-size: 25px;
+}
+

@@ -8,8 +8,6 @@ const Main = ({ accounts, setAccounts }) => {
   const [mintAmount, setMintAmount] =useState(1);
   const isConnected = Boolean(accounts[0]);
 
-
-
   async function handleMint() {
     if (window.ethereum) {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
