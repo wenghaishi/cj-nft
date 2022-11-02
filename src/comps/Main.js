@@ -37,7 +37,7 @@ const Main = ({ accounts, setAccounts }) => {
             might want to keep a lookout. There will be surprises.
         </h1>
         <div  className='main-2' >
-            <img  className='main-logo' src="burger.png" alt="" />
+            <img  className='main-logo' src="burger.jpg" alt="" />
             {isConnected ? (
               <div className='main-code-box' >
                 <h1 className='main-enter-code' >Enter unique code at the bottom of your reciept.</h1>
